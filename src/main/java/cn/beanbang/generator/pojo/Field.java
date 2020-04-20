@@ -1,10 +1,15 @@
 package cn.beanbang.generator.pojo;
 
-import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Entity;
 
 @Entity
 public class Field {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
@@ -20,7 +25,7 @@ public class Field {
 
     private boolean notNull;
 
-    private boolean unique;
+    private boolean valueUnique;
 
     private boolean zeroFilled;
 
@@ -85,11 +90,11 @@ public class Field {
     }
 
     public boolean isUnique() {
-        return unique;
+        return valueUnique;
     }
 
     public void setUnique(boolean unique) {
-        this.unique = unique;
+        this.valueUnique = unique;
     }
 
     public boolean isZeroFilled() {

@@ -1,8 +1,18 @@
 package cn.beanbang.generator.pojo;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 @javax.persistence.Entity
 public class Entity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @ManyToOne
+    Instance instance;
 
     private String name;
 
@@ -14,6 +24,14 @@ public class Entity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Instance getInstance() {
+        return instance;
+    }
+
+    public void setInstance(Instance instance) {
+        this.instance = instance;
     }
 
     public String getName() {
