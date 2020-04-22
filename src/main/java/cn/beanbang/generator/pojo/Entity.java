@@ -5,6 +5,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * 实体表
+ * 对应数据库表
+ */
 @javax.persistence.Entity
 public class Entity {
     @Id
@@ -12,7 +16,7 @@ public class Entity {
     private int id;
 
     @ManyToOne
-    Instance instance;
+    Model model;
 
     private String name;
 
@@ -26,12 +30,12 @@ public class Entity {
         this.id = id;
     }
 
-    public Instance getInstance() {
-        return instance;
+    public Model getModel() {
+        return model;
     }
 
-    public void setInstance(Instance instance) {
-        this.instance = instance;
+    public void setModel(Model model) {
+        this.model = model;
     }
 
     public String getName() {

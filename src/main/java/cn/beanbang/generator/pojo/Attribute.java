@@ -1,27 +1,27 @@
 package cn.beanbang.generator.pojo;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
 
 /**
- * 实例表
- * 通过数据库模型和模板可以生成实例项目
+ * 属性表
+ * 储存模板的信息的默认值，比如包名
  */
 @Entity
-public class Instance {
+public class Attribute {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
-    Model model;
-
-    @ManyToOne
-    Template template;
+    private Template template;
 
     private String name;
 
-    private String comment;
+    private String defaultValue;
 
     public int getId() {
         return id;
@@ -29,14 +29,6 @@ public class Instance {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Model getModel() {
-        return model;
-    }
-
-    public void setModel(Model model) {
-        this.model = model;
     }
 
     public Template getTemplate() {
@@ -55,11 +47,11 @@ public class Instance {
         this.name = name;
     }
 
-    public String getComment() {
-        return comment;
+    public String getDefaultValue() {
+        return defaultValue;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 }

@@ -6,6 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
 
+/**
+ * 字段表
+ * 对应数据库表的字段
+ */
 @Entity
 public class Field {
     @Id
