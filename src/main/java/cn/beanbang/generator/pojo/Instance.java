@@ -1,5 +1,7 @@
 package cn.beanbang.generator.pojo;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 
@@ -8,6 +10,7 @@ import javax.persistence.Entity;
  * 通过数据库模型和模板可以生成实例项目
  */
 @Entity
+@Data
 public class Instance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,44 +25,4 @@ public class Instance {
     private String name;
 
     private String comment;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Model getModel() {
-        return model;
-    }
-
-    public void setModel(Model model) {
-        this.model = model;
-    }
-
-    public Template getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(Template template) {
-        this.template = template;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 }
