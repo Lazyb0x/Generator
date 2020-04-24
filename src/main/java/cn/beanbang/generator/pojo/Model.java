@@ -24,6 +24,8 @@ public class Model {
 
     private String comment;
 
+    public Model(){};
+
     public Model(String name, String comment) {
         this.name = name;
         this.comment = comment;
