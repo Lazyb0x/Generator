@@ -21,7 +21,9 @@ public class Entity {
     @ManyToOne
     Model model;
 
-    private String name;
+    private String entityName;
+
+    private String tableName;
 
     private String comments;
 }

@@ -2,11 +2,9 @@ package cn.beanbang.generator.service;
 
 import cn.beanbang.generator.dao.ModelDAO;
 import cn.beanbang.generator.pojo.Model;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.jws.WebParam;
 import java.util.List;
 
 @Service
