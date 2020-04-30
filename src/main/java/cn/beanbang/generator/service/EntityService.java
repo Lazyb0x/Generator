@@ -13,8 +13,8 @@ public class EntityService {
     @Autowired
     EntityDAO entityDAO;
 
-    public List<Entity> findByModelId(int id){
-        return entityDAO.findEntityByModel(new Model(){{setId(id);}});
+    public List<Entity> findByModelId(int modelId){
+        return entityDAO.findEntityByModel(new Model(){{setId(modelId);}});
     }
 
     public Entity add(Entity entity){

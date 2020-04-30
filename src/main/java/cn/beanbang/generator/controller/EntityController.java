@@ -14,8 +14,8 @@ public class EntityController {
     EntityService entityService;
 
     @GetMapping
-    public List<Entity> list(int id){
-        return entityService.findByModelId(id);
+    public List<Entity> list(int modelId){
+        return entityService.findByModelId(modelId);
     }
 
     @PostMapping

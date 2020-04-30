@@ -2,10 +2,7 @@ package cn.beanbang.generator.pojo;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.persistence.Entity;
 
 /**
@@ -28,14 +25,19 @@ public class Field {
 
     private String dataType;
 
+    @Column(columnDefinition = "boolean default false")
     private boolean primaryKey;
 
+    @Column(columnDefinition = "boolean default false")
     private boolean notNull;
 
+    @Column(columnDefinition = "boolean default false")
     private boolean valueUnique;
 
+    @Column(columnDefinition = "boolean default false")
     private boolean zeroFilled;
 
+    @Column(columnDefinition = "boolean default false")
     private boolean autoIncremental;
 
     private String defaultValue;
