@@ -1,6 +1,6 @@
 package cn.beanbang.generator.controller;
 
-import cn.beanbang.generator.pojo.Field;
+import cn.beanbang.generator.model.po.Field;
 import cn.beanbang.generator.service.FieldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,9 @@
 package cn.beanbang.generator.service;
 
 import cn.beanbang.generator.dao.InstanceDAO;
-import cn.beanbang.generator.pojo.Instance;
-import cn.beanbang.generator.pojo.Model;
-import cn.beanbang.generator.pojo.Template;
+import cn.beanbang.generator.model.po.Instance;
+import cn.beanbang.generator.model.po.Model;
+import cn.beanbang.generator.model.po.Template;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

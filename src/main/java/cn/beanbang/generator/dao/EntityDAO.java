@@ -1,7 +1,7 @@
 package cn.beanbang.generator.dao;
 
-import cn.beanbang.generator.pojo.Entity;
-import cn.beanbang.generator.pojo.Model;
+import cn.beanbang.generator.model.po.Entity;
+import cn.beanbang.generator.model.po.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

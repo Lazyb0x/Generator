@@ -1,8 +1,8 @@
 package cn.beanbang.generator.service;
 
 import cn.beanbang.generator.dao.FieldDAO;
-import cn.beanbang.generator.pojo.Entity;
-import cn.beanbang.generator.pojo.Field;
+import cn.beanbang.generator.model.po.Entity;
+import cn.beanbang.generator.model.po.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

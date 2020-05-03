@@ -1,6 +1,6 @@
 package cn.beanbang.generator.service;
 
-import cn.beanbang.generator.pojo.Model;
+import cn.beanbang.generator.model.po.Model;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
