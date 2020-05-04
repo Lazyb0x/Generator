@@ -1,0 +1,19 @@
+###set($greet = 'hello')
+##$greet $name
+###foreach($i in $list)
+##$i
+###end
+
+CREATE TABLE `${entity.tableName}` (
+#foreach($f in $entity.fields)
+    `$f.columnName` $f.dataType ##
+    #if($f.primaryKey)PRIMARY KEY #end
+    #if($f.notNull)NOT NULL #end##
+    #if($f.valueUnique)UNIQUE #end##
+    #if($f.zeroFilled)ZEROFILL #end##
+    #if($f.autoIncremental)AUTO_INCREMENT #end##
+    #if("$!f.defaultValue"!="")DEFAULT $f.defaultValue #end
+    #if($foreach.hasNext),#end
+
+#end
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
