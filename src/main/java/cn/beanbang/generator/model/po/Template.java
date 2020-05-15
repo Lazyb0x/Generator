@@ -19,9 +19,6 @@ public class Template {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
 
-    @ManyToOne
-    Instance instance;
-
     private String name;
 
     private String description;

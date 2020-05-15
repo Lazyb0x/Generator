@@ -50,4 +50,14 @@ public class FileTests {
         System.out.println(field);
     }
 
+    @Test
+
+    void listFiles(){
+        File file = new File("./templates/sql");
+        File[] fileList = file.listFiles();
+
+        for (File f : fileList){
+            System.out.println(f.getName());
+        }
+    }
 }

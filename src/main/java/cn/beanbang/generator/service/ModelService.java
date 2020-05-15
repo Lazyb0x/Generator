@@ -1,5 +1,7 @@
 package cn.beanbang.generator.service;
 
+import cn.beanbang.generator.dao.DBColumnDAO;
+import cn.beanbang.generator.dao.DBTableDAO;
 import cn.beanbang.generator.dao.ModelDAO;
 import cn.beanbang.generator.model.po.Model;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,12 @@ import java.util.List;
 public class ModelService {
     @Autowired
     ModelDAO modelDAO;
+
+//    @Autowired
+//    DBTableDAO dbTableDAO;
+//
+//    @Autowired
+//    DBColumnDAO dbColumnDAO;
 
     public List<Model> findAll(){
         return modelDAO.findAll();

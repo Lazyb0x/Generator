@@ -5,6 +5,8 @@ import cn.beanbang.generator.service.InstanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.List;
 
 @RestController
@@ -31,6 +33,19 @@ public class InstanceController {
     @DeleteMapping("/{id}")
     public String delete(@PathVariable int id){
         instanceService.delete(id);
+        return null;
+    }
+
+    @GetMapping("/codePreview")
+    public List<Object> preview(int id){
+        //todo
+        return null;
+    }
+
+    @GetMapping("/download")
+    public String download(int id, HttpServletRequest request){
+        //todo
+        File file = instanceService.generate(id);
         return null;
     }
 }

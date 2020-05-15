@@ -19,5 +19,8 @@ public class Value {
     @OneToOne
     Attribute attribute;
 
+    @ManyToOne
+    Instance instance;
+
     String content;
 }

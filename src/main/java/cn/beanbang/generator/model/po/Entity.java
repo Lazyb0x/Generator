@@ -1,11 +1,10 @@
 package cn.beanbang.generator.model.po;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * 实体表
@@ -26,4 +25,8 @@ public class Entity {
     private String tableName;
 
     private String comments;
+
+    @Transient
+    @JsonIgnore
+    private List<Field> fields;
 }
