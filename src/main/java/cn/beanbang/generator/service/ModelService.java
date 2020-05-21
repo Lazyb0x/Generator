@@ -14,8 +14,8 @@ public class ModelService {
     @Autowired
     ModelDAO modelDAO;
 
-//    @Autowired
-//    DBTableDAO dbTableDAO;
+    @Autowired
+    DBTableDAO dbTableDAO;
 //
 //    @Autowired
 //    DBColumnDAO dbColumnDAO;

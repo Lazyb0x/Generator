@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @SpringBootTest
 public class VelocityTests {
@@ -78,4 +78,34 @@ public class VelocityTests {
         return employeeJson;
     }
 
+    @Test
+    void getMacros(){
+        VelocityEngine ve = new VelocityEngine();
+        ve.init();
+        Template t = ve.getTemplate("templates/sql/entity/hello.vm");
+        System.out.println(t.getName());
+    }
+
+    @Test
+    void velocityStringUtils(){
+        String s = "Attir";
+        System.out.println(s.substring(0,1).toLowerCase() + s.substring(1));
+    }
+
+    @Test
+    void mapTest(){
+        Properties properties = new Properties();
+        properties.setProperty("test", "test");
+        properties.setProperty("greet", "hello");
+
+        Velocity.init();
+        VelocityContext context = new VelocityContext();
+        context.put("properties", properties);
+
+        String s = "Here is a $properties[\"test\"], ${properties[\"greet\"]}! I did it!";
+
+        StringWriter sw = new StringWriter();
+        Velocity.evaluate(context, sw, "mytest", s);
+        System.out.println(sw.toString());
+    }
 }

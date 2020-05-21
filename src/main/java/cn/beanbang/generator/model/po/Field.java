@@ -23,6 +23,8 @@ public class Field {
 
     private String columnName;
 
+    private String fieldType;
+
     private String dataType;
 
     @Column(columnDefinition = "boolean default false")

@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface ValueDAO extends JpaRepository<Value, Integer> {
     List<Value> findValueByInstanceAndAttribute(Instance instance, Attribute attribute);
+    List<Value> findValueByInstance(Instance instance);
 }

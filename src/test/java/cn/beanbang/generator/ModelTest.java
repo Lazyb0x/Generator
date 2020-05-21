@@ -27,4 +27,11 @@ public class ModelTest {
         System.out.println(model);
         assert model.equals(newModel);
     }
+
+    @Test
+    void testPersistance(){
+        Model model = modelDAO.findById(3).get();
+        model.setComment("就是管理图书的2");
+        System.out.println(model);
+    }
 }

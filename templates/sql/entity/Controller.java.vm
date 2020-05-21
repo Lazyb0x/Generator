@@ -1,0 +1,46 @@
+#set( $entityLower = ${entity.entityName.substring(0,1).toLowerCase()}+${entity.entityName.substring(1)} )
+#set( $entityLowerService = $entityLower+"Service")
+#set( $entityService = $entity.entityName+"Service")
+#set( $groupId = $instance.properties["groupId"] )
+#set( $artifactId = $instance.properties["artifactId"] )
+#set( $author =  $instance.properties["author"])
+package ${groupId}.${artifactId}.controller;
+
+import cn.beanbang.generator.model.po.${entity.entityName};
+import cn.beanbang.generator.service.${entityService};
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/${entityLower}")
+public class ${entity.entityName}Controller {
+    @Autowired
+    ${entityService} ${entityLowerService};
+
+    @GetMapping
+    public List<${entity.entityName}> list(){
+        return ${entityLowerService}.findAll();
+    }
+
+    @PostMapping
+    public ${entity.entityName} add(@RequestBody ${entity.entityName} ${entityLower}){
+        return ${entityLowerService}.add(${entityLower});
+    }
+
+    @PutMapping
+    public ${entity.entityName} update(@RequestBody ${entity.entityName} ${entityLower}){
+        return ${entityLowerService}.update(${entityLower});
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable int id){
+        ${entityLowerService}.delete(id);
+        return null;
+    }
+
+}
