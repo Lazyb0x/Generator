@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -43,9 +45,14 @@ public class InstanceController {
     }
 
     @GetMapping("/download")
-    public String download(int id, HttpServletRequest request){
+    public String download(int id, HttpServletResponse response) throws IOException {
         //todo
-        File file = instanceService.generate(id);
+        byte[] file = instanceService.generate(id);
+        response.reset();
+        response.setHeader("Content-Disposition", "attachment; filename=\"code.zip\"");
+        response.addHeader("Content-Length", "" + file.length);
+        response.setContentType("application/octet-stream; charset=UTF-8");
+        response.getOutputStream().write(file);
         return null;
     }
 }

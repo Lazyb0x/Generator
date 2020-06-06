@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "fileName": "Controller.java.vm",
+      "type": "entity",
+      "exportSuffix": "Controller.java",
+      "exportFolder": "controller"
+    },
+    {
+      "fileName": "DAO.java.vm",
+      "type": "entity",
+      "exportSuffix": "DAO.java",
+      "exportFolder": "dao"
+    },
+    {
+      "fileName": "Service.java.vm",
+      "type": "entity",
+      "exportSuffix": "Service.java",
+      "exportFolder": "service"
+    },
+    {
+      "fileName": ".java.vm",
+      "type": "entity",
+      "exportSuffix": ".java",
+      "exportFolder": "model"
+    },
+    {
+      "fileName": "sql.vm",
+      "type": "project",
+      "exportSuffix": "tables.sql",
+      "exportFolder": "/"
+    }
+  ],
+  "properties": {
+    "groupId": "com.example",
+    "artifactId": "project",
+    "author": "nobody"
+  }
+}

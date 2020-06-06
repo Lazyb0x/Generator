@@ -47,7 +47,7 @@ public class VelocityTests {
         //ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
         ve.init();
         // 获取模板文件
-        Template t = ve.getTemplate("templates/sql/hello.vm");
+        Template t = ve.getTemplate("templates/sql/project/sql.vm");
         // 设置变量
         VelocityContext ctx = new VelocityContext();
         ctx.put("entity", edto);
